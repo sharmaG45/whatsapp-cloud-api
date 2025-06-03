@@ -7,14 +7,8 @@ const messageRouter = require("./routes/message-routes"); // ✅
 
 const app = express();
 
-// app.use(
-//   cors({
-//     origin: process.env.FRONTEND_URL, // your React/Vite frontend port
-//     methods: ["GET", "POST", "PUT", "DELETE"],
-//     allowedHeaders: ["Content-Type", "Authorization"],
-//     credentials: true,
-//   })
-// );
+app.use(cors({ origin: "http://localhost:3000" }));
+app.use(express.json());
 
 app.use(body_parser.json());
 
